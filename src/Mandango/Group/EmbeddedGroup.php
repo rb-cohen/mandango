@@ -108,7 +108,7 @@ class EmbeddedGroup extends Group
             ->findOne(array('_id' => $rap['root']->getId()), array($rap['path']))
         ;
 
-        return ($result && isset($result[$rap['path']])) ? $result[$rap['path']] : array();
+        return ($result && isset($result[$rap['path']])) ? array_filter($result[$rap['path']]) : array();
     }
 
     /**

@@ -71,6 +71,7 @@ class EmbeddedGroup extends Group
      */
     public function setSavedData(array $data)
     {
+        $data = array_filter($data);
         Archive::set($this, 'saved_data', $data);
     }
 
